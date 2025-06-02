@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Masonry Grid + Kesin Video Play</title>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+  <style>
+    html, body { margin:0; padding:0; width:100%; height:100%; background:#111; overflow:hidden; }
+    #wrapper { width:100%; height:100%; overflow-y:auto; }
+    #grid { position:relative; padding:40px; box-sizing:border-box; margin:0 auto; }
+    .grid-sizer { }
+    .grid-item {
+      background:#222; border-radius:6px; margin-bottom:10px;
+      transition:transform .3s ease, opacity .3s ease;
+      will-change:transform,opacity; transform-origin:center center;
+      overflow:hidden;
+    }
+    .grid-item img, .grid-item video {
+      display:block; width:100%; height:auto; object-fit:contain; pointer-events:none;
+    }
+    .grid-item.dimmed { opacity:.5; }
+    .grid-item.hovered { transform:scale(1.2); z-index:10; }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="grid">
+      <div class="grid-sizer"></div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const IMG_COUNT = 29, VID_COUNT = 26;
+    const BATCH_SIZE = 8, COLS = 10, GUTTER = 10, PADDING = 40, HOVER_DELAY = 300;
+    const wrapper = document.getElementById('wrapper'),
+          grid    = document.getElementById('grid'),
+          totalW  = window.innerWidth - 2*PADDING,
+          colW    = Math.floor((totalW - (COLS-1)*GUTTER)/COLS);
+
+    document.querySelector('.grid-sizer').style.width = `${colW}px`;
+    grid.style.width = `${colW*COLS + GUTTER*(COLS-1)}px`;
+
+    const msnry = new Masonry(grid, {
+      itemSelector:'.grid-item',
+      columnWidth:'.grid-sizer',
+      gutter:GUTTER,
+      horizontalOrder:true,
+      transitionDuration:'0.3s'
+    });
+
+    // içerik dizisi
+    const items = [];
+    for(let i=1;i<=IMG_COUNT;i++) items.push({type:'image', src:`images/${i}.jpg`});
+    for(let i=1;i<=VID_COUNT;i++) items.push({type:'video', src:`videos/${i}.mp4`});
+    // Fisher–Yates karıştırma
+    for(let i=items.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [items[i],items[j]]=[items[j],items[i]];
+    }
+
+    let ptr=0;
+    function createTile(it){
+      const div=document.createElement('div');
+      div.className='grid-item';
+      div.style.width=`${colW}px`;
+
+      let media;
+      if(it.type==='image'){
+        media=new Image();
+        media.src=it.src;
+        media.addEventListener('load',()=>msnry.layout());
+      } else {
+        media=document.createElement('video');
+        media.src=it.src;
+        media.autoplay=true;
+        media.loop=true;
+        media.muted=true;
+        media.playsInline=true;
+        media.preload='auto';
+        div.appendChild(media);
+
+        // video oynatmaya hazır olduğunda layout ve play
+        media.addEventListener('canplay',()=>{
+          msnry.layout();
+          media.play().catch(()=>{});
+        });
+        // hemen yüklemeye başla
+        media.load();
+      }
+      if(it.type==='image') div.appendChild(media);
+
+      let timer;
+      div.addEventListener('mouseenter',()=>{
+        timer=setTimeout(()=>{
+          div.classList.add('hovered');
+          document.querySelectorAll('.grid-item').forEach(el=>{ if(el!==div) el.classList.add('dimmed'); });
+          if(it.type==='video'){
+            media.currentTime=0;
+            media.muted=false;
+            media.play().catch(()=>{});
+          }
+        }, HOVER_DELAY);
+      });
+      div.addEventListener('mouseleave',()=>{
+        clearTimeout(timer);
+        div.classList.remove('hovered');
+        document.querySelectorAll('.grid-item').forEach(el=>el.classList.remove('dimmed'));
+        if(it.type==='video'){
+          media.muted=true;
+          // pause yok: arka planda oynasın
+        }
+      });
+
+      return div;
+    }
+
+    function appendBatch(n, cb){
+      const newEls=[];
+      for(let i=0;i<n;i++){
+        const tile=createTile(items[ptr]);
+        ptr=(ptr+1)%items.length;
+        grid.appendChild(tile);
+        newEls.push(tile);
+      }
+      imagesLoaded(newEls,()=>{
+        msnry.appended(newEls);
+        msnry.layout();
+        if(cb) cb();
+      });
+    }
+
+    // ilk yükleme
+    appendBatch(BATCH_SIZE*COLS, ()=>{
+      imagesLoaded(grid,()=>{
+        msnry.layout();
+        // kesin autoplay
+        grid.querySelectorAll('video').forEach(v=>v.play().catch(()=>{}));
+      });
+    });
+
+    // sonsuz scroll
+    wrapper.addEventListener('scroll',()=>{
+      if(wrapper.scrollTop+wrapper.clientHeight > wrapper.scrollHeight-200){
+        appendBatch(BATCH_SIZE);
+      }
+    });
+    window.addEventListener('resize',()=>location.reload());
+  })();
+  </script>
+</body>
+</html>

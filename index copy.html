@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stabil Sonsuz Masonry Galeri</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: #111;
+      cursor: grab;
+      user-select: none;
+    }
+    body:active { cursor: grabbing; }
+
+    /* 5000×5000px sabit “sonsuz” sanal alan */
+    #canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 5000px;
+      height: 5000px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 240px);
+      grid-auto-rows: 240px;
+      gap: 30px;
+      padding: 100px;
+      background: #111;
+      transform-origin: 0 0;
+      will-change: transform;
+    }
+
+    .item {
+      width: 100%; height: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      background: transparent;
+    }
+    .hover-active .item:not(.hovered) { opacity: 0.2; }
+    .hovered { transform: scale(1.05); z-index: 10; }
+
+    img, video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="canvas"></div>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const maxImage = 10;  // klasördeki resim sayısı
+    const maxVideo = 5;   // klasördeki video sayısı
+
+    // Öğeleri tek sefer listeler
+    const items = [];
+    for (let i = 1; i <= maxImage; i++) items.push({type:"image",src:`images/${i}.png`});
+    for (let i = 1; i <= maxVideo; i++) items.push({type:"video",src:`videos/${i}.mp4`});
+    items.sort(()=>Math.random() - 0.5);
+
+    // Eleman oluşturma
+    items.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "item";
+
+      if (item.type === "image") {
+        const img = new Image();
+        img.src = item.src;
+        img.onload = () => div.appendChild(img);
+      } else {
+        const vid = document.createElement("video");
+        vid.src = item.src;
+        vid.preload = "metadata";
+        vid.muted = true;
+        vid.volume = 0.5;  // yaklaşık −3 dB
+        vid.loop = true;
+        vid.playsInline = true;
+        vid.onloadedmetadata = () => {
+          div.appendChild(vid);
+          vid.play().catch(()=>{});
+        };
+      }
+
+      // Hover efektleri
+      div.addEventListener("mouseenter", () => {
+        div.classList.add("hovered");
+        canvas.classList.add("hover-active");
+        const v = div.querySelector("video");
+        if (v) v.muted = false;
+      });
+      div.addEventListener("mouseleave", () => {
+        div.classList.remove("hovered");
+        canvas.classList.remove("hover-active");
+        const v = div.querySelector("video");
+        if (v) v.muted = true;
+      });
+
+      canvas.appendChild(div);
+    });
+
+    /* ==== Pan & Zoom ==== */
+    let scale = 1, offsetX = 0, offsetY = 0;
+    let isDragging = false, startX, startY;
+
+    function clamp() {
+      // Canvas 5000×5000, scale’e göre sınırları hesapla
+      const minX = Math.min(0, window.innerWidth - 5000 * scale);
+      const minY = Math.min(0, window.innerHeight - 5000 * scale);
+      offsetX = Math.max(minX, Math.min(0, offsetX));
+      offsetY = Math.max(minY, Math.min(0, offsetY));
+    }
+
+    function update() {
+      clamp();
+      canvas.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+    }
+    update();
+
+    // Drag
+    document.addEventListener("mousedown", e => {
+      isDragging = true;
+      startX = e.clientX - offsetX;
+      startY = e.clientY - offsetY;
+    });
+    document.addEventListener("mousemove", e => {
+      if (!isDragging) return;
+      offsetX = e.clientX - startX;
+      offsetY = e.clientY - startY;
+      update();
+    });
+    document.addEventListener("mouseup", () => isDragging = false);
+
+    // Zoom (fare tekerleği)
+    canvas.addEventListener("wheel", e => {
+      if (e.ctrlKey || e.metaKey) return;
+      e.preventDefault();
+      const delta = -Math.sign(e.deltaY) * 0.05;
+      const newScale = Math.min(3, Math.max(0.3, scale + delta));
+
+      // İmleç noktası referans olsun
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+      const cx = (mx - offsetX) / scale, cy = (my - offsetY) / scale;
+
+      scale = newScale;
+      offsetX = mx - cx * scale;
+      offsetY = my - cy * scale;
+      update();
+    }, { passive: false });
+  </script>
+</body>
+</html>
