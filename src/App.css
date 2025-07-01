@@ -1,0 +1,72 @@
+/* App.css */
+
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-container {
+  position: relative;
+  background-color: #000;
+  padding: 20px;
+}
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -10px;
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 10px;
+  background-clip: padding-box;
+}
+
+.my-masonry-grid_column > div {
+  margin-bottom: 10px;
+}
+
+.media-item {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.faded {
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .5 ;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 9;
+}
+
+.fixed-active {
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  max-width: 70vw;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+  opacity: 1 !important;
+  transition: all 0.3s ease-in-out;
+  background-color: #000;
+}
