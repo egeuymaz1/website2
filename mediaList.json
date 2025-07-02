@@ -1,350 +1,89 @@
 [
-  {
-    "type": "image",
-    "src": "/media/1.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/2.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/3.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/4.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/4.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/5.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/5.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/6.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/7.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/7.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/8.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/8.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/9.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/9.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/10.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/10.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/11.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/11.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/12.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/12.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/13.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/13.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/14.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/14.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/15.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/15.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/16.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/16.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/17.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/17.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/18.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/18.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/19.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/19.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/20.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/20.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/21.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/21.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/22.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/22.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/23.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/23.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/24.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/24.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/25.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/25.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/26.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/26.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/27.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/27.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/28.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/28.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/29.jpg"
-  },
-  {
-    "type": "video",
-    "src": "/media/29.mp4"
-  },
-  {
-    "type": "video",
-    "src": "/media/30.mp4"
-  },
-  {
-    "type": "video",
-    "src": "/media/31.mp4"
-  },
-  {
-    "type": "video",
-    "src": "/media/32.mp4"
-  },
-  {
-    "type": "image",
-    "src": "/media/34.png"
-  },
-  {
-    "type": "image",
-    "src": "/media/35.png"
-  },
-  {
-    "type": "image",
-    "src": "/media/36.png"
-  },
-  {
-    "type": "image",
-    "src": "/media/37.png"
-  },
-  {
-    "type": "image",
-    "src": "/media/38.png"
-  },
-  {
-    "type": "image",
-    "src": "/media/39.png"
-  },
-  {
-    "type": "image",
-    "src": "/media/40.png"
-  },
-  {
-    "type": "image",
-    "src": "/media/41.png"
-  },
-  {
-    "type": "image",
-    "src": "/media/42.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/43.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/44.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/45.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/46.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/47.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/48.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/49.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/50.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/51.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/52.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/53.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/54.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/55.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/56.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/57.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/58.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/59.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/60.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/61.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/62.jpg"
-  },
-  {
-    "type": "image",
-    "src": "/media/63.jpg"
-  }
+  { "type": "image", "src": "/website2/media/1.jpg" },
+  { "type": "image", "src": "/website2/media/2.jpg" },
+  { "type": "image", "src": "/website2/media/3.jpg" },
+  { "type": "image", "src": "/website2/media/4.jpg" },
+  { "type": "video", "src": "/website2/media/4.mp4" },
+  { "type": "image", "src": "/website2/media/5.jpg" },
+  { "type": "video", "src": "/website2/media/5.mp4" },
+  { "type": "image", "src": "/website2/media/6.jpg" },
+  { "type": "image", "src": "/website2/media/7.jpg" },
+  { "type": "video", "src": "/website2/media/7.mp4" },
+  { "type": "image", "src": "/website2/media/8.jpg" },
+  { "type": "video", "src": "/website2/media/8.mp4" },
+  { "type": "image", "src": "/website2/media/9.jpg" },
+  { "type": "video", "src": "/website2/media/9.mp4" },
+  { "type": "image", "src": "/website2/media/10.jpg" },
+  { "type": "video", "src": "/website2/media/10.mp4" },
+  { "type": "image", "src": "/website2/media/11.jpg" },
+  { "type": "video", "src": "/website2/media/11.mp4" },
+  { "type": "image", "src": "/website2/media/12.jpg" },
+  { "type": "video", "src": "/website2/media/12.mp4" },
+  { "type": "image", "src": "/website2/media/13.jpg" },
+  { "type": "video", "src": "/website2/media/13.mp4" },
+  { "type": "image", "src": "/website2/media/14.jpg" },
+  { "type": "video", "src": "/website2/media/14.mp4" },
+  { "type": "image", "src": "/website2/media/15.jpg" },
+  { "type": "video", "src": "/website2/media/15.mp4" },
+  { "type": "image", "src": "/website2/media/16.jpg" },
+  { "type": "video", "src": "/website2/media/16.mp4" },
+  { "type": "image", "src": "/website2/media/17.jpg" },
+  { "type": "video", "src": "/website2/media/17.mp4" },
+  { "type": "image", "src": "/website2/media/18.jpg" },
+  { "type": "video", "src": "/website2/media/18.mp4" },
+  { "type": "image", "src": "/website2/media/19.jpg" },
+  { "type": "video", "src": "/website2/media/19.mp4" },
+  { "type": "image", "src": "/website2/media/20.jpg" },
+  { "type": "video", "src": "/website2/media/20.mp4" },
+  { "type": "image", "src": "/website2/media/21.jpg" },
+  { "type": "video", "src": "/website2/media/21.mp4" },
+  { "type": "image", "src": "/website2/media/22.jpg" },
+  { "type": "video", "src": "/website2/media/22.mp4" },
+  { "type": "image", "src": "/website2/media/23.jpg" },
+  { "type": "video", "src": "/website2/media/23.mp4" },
+  { "type": "image", "src": "/website2/media/24.jpg" },
+  { "type": "video", "src": "/website2/media/24.mp4" },
+  { "type": "image", "src": "/website2/media/25.jpg" },
+  { "type": "video", "src": "/website2/media/25.mp4" },
+  { "type": "image", "src": "/website2/media/26.jpg" },
+  { "type": "video", "src": "/website2/media/26.mp4" },
+  { "type": "image", "src": "/website2/media/27.jpg" },
+  { "type": "video", "src": "/website2/media/27.mp4" },
+  { "type": "image", "src": "/website2/media/28.jpg" },
+  { "type": "video", "src": "/website2/media/28.mp4" },
+  { "type": "image", "src": "/website2/media/29.jpg" },
+  { "type": "video", "src": "/website2/media/29.mp4" },
+  { "type": "video", "src": "/website2/media/30.mp4" },
+  { "type": "video", "src": "/website2/media/31.mp4" },
+  { "type": "video", "src": "/website2/media/32.mp4" },
+  { "type": "image", "src": "/website2/media/34.png" },
+  { "type": "image", "src": "/website2/media/35.png" },
+  { "type": "image", "src": "/website2/media/36.png" },
+  { "type": "image", "src": "/website2/media/37.png" },
+  { "type": "image", "src": "/website2/media/38.png" },
+  { "type": "image", "src": "/website2/media/39.png" },
+  { "type": "image", "src": "/website2/media/40.png" },
+  { "type": "image", "src": "/website2/media/41.png" },
+  { "type": "image", "src": "/website2/media/42.jpg" },
+  { "type": "image", "src": "/website2/media/43.jpg" },
+  { "type": "image", "src": "/website2/media/44.jpg" },
+  { "type": "image", "src": "/website2/media/45.jpg" },
+  { "type": "image", "src": "/website2/media/46.jpg" },
+  { "type": "image", "src": "/website2/media/47.jpg" },
+  { "type": "image", "src": "/website2/media/48.jpg" },
+  { "type": "image", "src": "/website2/media/49.jpg" },
+  { "type": "image", "src": "/website2/media/50.jpg" },
+  { "type": "image", "src": "/website2/media/51.jpg" },
+  { "type": "image", "src": "/website2/media/52.jpg" },
+  { "type": "image", "src": "/website2/media/53.jpg" },
+  { "type": "image", "src": "/website2/media/54.jpg" },
+  { "type": "image", "src": "/website2/media/55.jpg" },
+  { "type": "image", "src": "/website2/media/56.jpg" },
+  { "type": "image", "src": "/website2/media/57.jpg" },
+  { "type": "image", "src": "/website2/media/58.jpg" },
+  { "type": "image", "src": "/website2/media/59.jpg" },
+  { "type": "image", "src": "/website2/media/60.jpg" },
+  { "type": "image", "src": "/website2/media/61.jpg" },
+  { "type": "image", "src": "/website2/media/62.jpg" },
+  { "type": "image", "src": "/website2/media/63.jpg" }
 ]
