@@ -65,7 +65,7 @@
   { "type": "image", "src": "/website2/media/40.png" },
   { "type": "image", "src": "/website2/media/41.png" },
   { "type": "image", "src": "/website2/media/42.jpg" },
-  { "type": "image", "src": "/website2/media/43.jpg" },
+  { "type": "video", "src": "/website2/media/43.jpg" },
     { "type": "image", "src": "/website2/media/43.mp4" },
   { "type": "image", "src": "/website2/media/44.jpg" },
   { "type": "image", "src": "/website2/media/45.jpg" },
